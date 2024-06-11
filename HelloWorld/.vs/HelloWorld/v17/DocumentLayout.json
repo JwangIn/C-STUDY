@@ -1,0 +1,78 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CEE201-7320-460C-9E13-BAB44803A0F3}|HelloWorld.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\\uCEF4\uD30C\uC77C\uB7EC.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2CEE201-7320-460C-9E13-BAB44803A0F3}|HelloWorld.vcxproj|solutionrelative:\uCEF4\uD30C\uC77C\uB7EC.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CEE201-7320-460C-9E13-BAB44803A0F3}|HelloWorld.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\HELLO.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2CEE201-7320-460C-9E13-BAB44803A0F3}|HelloWorld.vcxproj|solutionrelative:HELLO.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\uCEF4\uD30C\uC77C\uB7EC.c",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\\uCEF4\uD30C\uC77C\uB7EC.c",
+              "RelativeDocumentMoniker": "\uCEF4\uD30C\uC77C\uB7EC.c",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\\uCEF4\uD30C\uC77C\uB7EC.c",
+              "RelativeToolTip": "\uCEF4\uD30C\uC77C\uB7EC.c",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB0AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-06-11T07:45:33.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HELLO.c",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\HELLO.c",
+              "RelativeDocumentMoniker": "HELLO.c",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\HELLO.c",
+              "RelativeToolTip": "HELLO.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-06-11T07:29:53.761Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

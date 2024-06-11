@@ -130,7 +130,8 @@
     <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Hello.c" />
+    <ClCompile Include="HELLO.c" />
+    <ClCompile Include="컴파일러.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

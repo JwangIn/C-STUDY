@@ -18,7 +18,10 @@
     <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Hello.c">
+    <ClCompile Include="HELLO.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="컴파일러.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
