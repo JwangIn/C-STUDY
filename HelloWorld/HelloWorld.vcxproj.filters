@@ -27,5 +27,11 @@
     <ClCompile Include="변수.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="이스케이프.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="4강_입력.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

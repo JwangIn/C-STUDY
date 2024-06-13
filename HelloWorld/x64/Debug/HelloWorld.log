@@ -1,3 +1,2 @@
-﻿  변수.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\변수.c(52,37): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  4강_입력.c
   HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe
