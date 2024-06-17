@@ -1,2 +1,4 @@
-﻿  4강_입력.c
+﻿  lecture6.c
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture6.c(65,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture6.c(72,9): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
   HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe

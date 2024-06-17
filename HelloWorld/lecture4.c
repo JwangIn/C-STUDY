@@ -94,10 +94,17 @@ void lecture4()
     printf("문제2. %d x %d + %d = %d", SecondNum1, SecondNum2, SecondNum3, SecondNum1 * SecondNum2 + SecondNum3);
 
     // 문제 3. " 두 개의 정수를 입력받아서 몫과 나머지를 출력하는 코드를 작성해보세요."
-    // 몫을 구하는 방식
+    // 몫을 구하는 방식 a / b
+    // a % b = a 를 b 로 나눈 값
     printf("문제3 \n");
-    int third1, third2, third3;
-    scanf_s(" %d %d %d", &third1, &third2, &third3);
+    int third1, third2;
+    scanf_s(" %d %d", &third1, &third2);
+    printf("두 개의 정수를 나눈 몫 : %d , 나머지 : %d", third1 / third2, third1 % third2);
+    
+    // 문제 4.하나의 정수를 받아 제곱해보시요.
+    printf("문제 4 \n");
+
+    // 문제5 세개의 정수를 입력 받아, (a-b) * (b+c) * (c%a)
 
 
 
