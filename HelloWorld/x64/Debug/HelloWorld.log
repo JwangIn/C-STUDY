@@ -1,4 +1,6 @@
-﻿  lecture6.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture6.c(65,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture6.c(72,9): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
-  HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe
+﻿  lecture7.c
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(1,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(66,11): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(75,67): error C2065: 'numA': 선언되지 않은 식별자입니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(75,73): error C2065: 'numZ': 선언되지 않은 식별자입니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(77,20): warning C4305: '초기화 중': 'int'에서 'char'(으)로 잘립니다.
