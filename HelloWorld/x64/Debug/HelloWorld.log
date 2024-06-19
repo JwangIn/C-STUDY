@@ -1,6 +1,7 @@
-﻿  lecture7.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(1,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(66,11): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(75,67): error C2065: 'numA': 선언되지 않은 식별자입니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(75,73): error C2065: 'numZ': 선언되지 않은 식별자입니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture7.c(77,20): warning C4305: '초기화 중': 'int'에서 'char'(으)로 잘립니다.
+﻿  lecture8.c
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture8.c(61,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture8.c(100,21): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture8.c(126,21): warning C4552: '<<': 식의 결과가 사용되지 않습니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture8.c(131,22): warning C4552: '>>': 식의 결과가 사용되지 않습니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture8.c(146,9): warning C4101: 'shiftNum' :참조되지 않은 지역 변수입니다.
+  HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe

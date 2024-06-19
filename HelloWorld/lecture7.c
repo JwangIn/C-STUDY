@@ -72,7 +72,7 @@ void lecture7()
     char num_a, num_Z;
     num_a = 97;
     num_Z = 90;
-    printf("문제 1 . 아스키 코드 값 a : %c Z : %c\n", numA, numZ);
+    printf("문제 1 . 아스키 코드 값 a : %c Z : %c\n", num_a, num_Z);
 
     char korea_C = 'ㅁ';
     printf("한글은  문자열로 출력이 될까요? %c\n", korea_C);
