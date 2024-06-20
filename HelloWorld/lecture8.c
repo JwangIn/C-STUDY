@@ -124,29 +124,44 @@ void lecture8()
 
     char overFlowedValue = 0b10000000;
     overFlowedValue << 1; // 어떤 값이 나올까요?
+    // char 1바이트 크기.. 표현할 수 있는 수의 범위?
+    // 1바이트 정수.. 표현할 수 있는 음수 범위, 양수 범위
+    // 양의 정수 범위 : 0b[0][000][0000] : 0, 1 ~ 127
+    // 음의 정수 범위 : 0b[1][000][0000] : -128 ~ 1
+    //                 0b[1][111][1111] 
+    // -128 ~ 127 ( -128 ~ 127) 256개(2e8)
+    
+    // 0b01000000 << 2;
+    // overFlowedValue = 0b100000000;
+
     // printf 출력해보기
     printf("오버플로우밸류 : %d\n", overFlowedValue);
 
-    int overFlowedValue2 = 0b00000100;
-    overFlowedValue2 >> 5; // 어떤 값이 나올까요?
+    char overFlowedValue2 = 0b00000100;
+    overFlowedValue2 >> 4; // 어떤 값이 나올까요?
 
     printf("오버플로우 밸류 : %d\n", overFlowedValue2);
 
-    // 10진수 하나 입력 받아서, 해당 수의 2의 보수 값을 출력하는 코드를 작성해보세요. ~(반전) 연산자를 사용해서
+    // 10진수 하나 입력 받아서, 해당 수의 2의 보수 값을 출력하는 코드를 작성해보세요. ~(반전) 연산자를 사용하기
+
     int twoComplement;
     printf("정수를 입력해주세요. 해당 수의 2의 보수 값을 출력합니다.\n");
     scanf_s("%d", &twoComplement);
     twoComplement = ~twoComplement + 1;
     
-    printf("2의 보수의 값을 출력: %d", twoComplement);
+    printf("2의 보수의 값을 출력: %d\n", twoComplement);
 
     // 시프트 연산
     // 10진수 하나 입력 받아서, 해당 수에 8을 곱한 후 32로 나누는 코드를 x,/ 없이 작성해보세요.
     // 8과 32가 반드시 코드에 들어가도록, 비트연산자 (<<,>>) 사용할 것
-    int shiftNum;
+    char shiftNum = 64; // 64
+                  // 0b01000000 ;
     printf("정수를 입력해주세요.\n");
-    scanf_s("%d", shiftNum);
-
+    //scanf_s("%d", &shiftNum);
+    //shiftNum = shiftNum << 3 >> 5;
+    shiftNum <<= 3;
+    shiftNum >>= 5;
+    printf("받은 정수를 8곱한 후 32로 나눈 값 : %d\n", shiftNum);
 
 
 
