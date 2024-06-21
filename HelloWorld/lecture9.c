@@ -43,7 +43,6 @@
 * 
 */
 #include "lectures.h"
-
 /*
 *  sizeof 연산자 .. 정수 (n)바이트..
 *  int a = 10;
@@ -109,30 +108,46 @@ void lecture9()
 
     // sizeof 연산자를 사용해서 데이터형을 출력하기 
     // char, short, int, long, long long, float, double, long float
-
-    printf("char 데이터 크기 : %d \n", sizeof(char));
-    printf("short 데이터 크기 : %d \n", sizeof(short));
-    printf("int 데이터 크기 : %d \n", sizeof(int));
-    printf("long 데이터 크기 : %d \n", sizeof(long));
-    printf("long  long 데이터 크기 : %d \n", sizeof(long long));
-    printf("float 데이터 크기 : %d \n", sizeof(float));
-    double my_double = 12.22;
-    printf("double 데이터 크기 : %d \n", sizeof(my_double));
-    printf("long float데이터 크기 : %d \n", sizeof(long float));
+    int sizeNum = sizeof(char);
+    printf("char 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(short)
+        ;
+    printf("short 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(int);
+    printf("int 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(long);
+    printf("long 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(long long);
+    printf("long  long 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(float);
+    printf("float 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(double);
+    printf("double 데이터 크기 : %d \n", sizeNum);
+    sizeNum = sizeof(long double);
+    printf("long double데이터 크기 : %d \n", sizeNum);
 
     // 문제 2. 리터럴 상수를 sizeof 연산자로 출력해보세요.
     // 3.15, .15f, 10 어던 데이터를 출력하는지 파악해보기. 
     // 예 ) sizeof(5); 어떤 값이 출력되는지 확인해보자.
-
-
+    sizeNum = sizeof(2);
+    printf("정수형 리터럴 상수 크기 : %d\n", sizeNum);
+    sizeNum = sizeof(2.31);
+    printf("리터럴 상수의 실수 표현의 기본 자료형 : %d\n", sizeNum);
+    sizeNum = sizeof('A');
+    printf("문자의 상수 표현의 기본 크기 : %d\n");
 
     // 문제3. 직사각형의 넓이를 구하는 프로그름을 작성을 해보세요.
     // 첫번째 조건 : 좌표를 두개 지정받아야 한다.(xpos1, ypos1), (xpos2, ypos2)
     // 두번째 조건 : xpos2rk xpos1보다 커야한다.
     // xpos2 - xpos1 길이로 하는 직사각형을 구하면 된다.
     // 예 ) (4,6) (6,8) 
+    int xpos1, xpos2, ypos1, ypos2;
+    printf("좌표를 두개 입력 해주세요.(x1,y1)\n");
+    scanf_s("%d %d", &xpos1, &ypos1);
+    printf("%d, %d보다 큰 수를 두개 입력 해주세요.(x2,y2)\n", xpos1, ypos1);
+    scanf_s("%d %d", &xpos2, &ypos2);
 
-    
+    printf("두 좌표로 만들어진 직사각형의 넓이 : %d\n", (xpos2 - xpos1) * (ypos2 - ypos1));
 
     // 심볼릭 상수 문제 
     // const 키워드를 사용하여 파이를 PI로 저장하고 그 값을 3.14로하여 원의 넓이를 구하는 코드를 상수를 사용하여 표현
