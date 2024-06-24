@@ -1,4 +1,2 @@
-﻿  lecture10.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture10.c(53,37): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture10.c(58,11): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+﻿  lecture11.c
   HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe

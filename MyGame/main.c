@@ -16,7 +16,7 @@ int main(void)
 
 
 	srand(time(NULL));
-	int commputerValue = rand() % 100 + 1; // 1~100 랜덤한 숫자가 computerValue에 입력이 됩니다.
+	int computerValue = rand() % 100 + 1; // 1~100 랜덤한 숫자가 computerValue에 입력이 됩니다.
 	
 	
 	printf("★☆ 환영합니다. ☆★\n");
@@ -28,6 +28,29 @@ int main(void)
 	printf("플레이어의 값을 입력해주세요.\n");
 	int userValue;
 	scanf_s("%d", &userValue);
+	
+	printf("플레이어의 값은 %d 입니다.\n", userValue);
+
+	// 플레이어 값과 컴퓨터의 값이 같으면 "축하합니다. 게임을 클리어 하셨습니다."
+
+	// 플레이어의 값과 컴퓨터의 값이 다르면 "틀렸습니다. 다시 시도해보세요."
+
+	if (userValue == computerValue)
+		printf("축하합니다. 게임을 클리어 하셨습니다.");
+	else if(userValue>computerValue)
+	{
+		printf("컴퓨터의 값이 더 작습니다.\n");
+		printf("다시 시도해 보세요\n");
+		
+	}
+	else if (userValue < computerValue)
+	{
+		printf("컴퓨터의 값이 더 큽니다.\n");
+		printf("다시 시도해 보세요\n");
+	}
+
+	
+	printf("컴퓨터의 값은 %d 입니다.\n",computerValue);
 
 	return 0;
 }
