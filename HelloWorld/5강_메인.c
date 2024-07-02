@@ -24,7 +24,8 @@ int main(void)
     //lecture8();
     //lecture9();
     //lecture10();
-    lecture11();
+    //lecture11();
+    lecture16();
 
     return 0;
 }
