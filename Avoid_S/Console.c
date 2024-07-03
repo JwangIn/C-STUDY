@@ -17,7 +17,7 @@ void GotoXY(int _x, int _y)
 
 void SetTitle(char* _szConsoleName)
 {
-	SetConsoleTitle(_szConsoleName);
+	SetConsoleTitleA(_szConsoleName);
 }
 
 void SetColor(unsigned char _BgColor, unsigned char _TextColor)
