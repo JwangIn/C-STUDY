@@ -22,6 +22,8 @@
 // 값이 그 크기에 따라 변한다.
 // 시작할 때 값을 초기화해주어야 한다.
 
+#include "lectures.h"
+
 void AddArryElement(int* arr, int len,int add) // 배열 요소의 값을 n만큼 더하는 함수로 변경해보세요.
 {
     for (int i = 0; i < len; i++)
@@ -53,7 +55,7 @@ void Call_by_Reference(int* _numPtr)
 // Call by Value 값에 의한 호출 : 함수 호출 시 기본적으로 외부에 영향을 주지 않습니다.
 // 포인터라는 녀석은 *(역참조 연산자)사용하여 함수 외부 주소를 참조해서 값을 변경할 수 있었습니다.
 
-#include "lectures.h"
+
 
 void SquareByValue_20(int num)
 {
