@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Condole.c" />
+    <ClCompile Include="Console.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
