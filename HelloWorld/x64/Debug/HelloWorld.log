@@ -1,3 +1,3 @@
-﻿  lecture21.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture21.c(75,9): warning C4101: 'count' :참조되지 않은 지역 변수입니다.
+﻿  lecture24.c
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture24.c(141,30): warning C4133: '함수': 'Player *'과(와) 'Player2 *' 사이의 형식이 호환되지 않습니다.
   HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe
