@@ -1,0 +1,11 @@
+﻿  main.c
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(18,10): warning C4473: 'scanf_s': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(18,10):
+  자리 표시자 및 해당 매개 변수에는 variadic 인수가 2개 필요하지만 1개가 제공되었습니다.
+  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(18,10):
+  누락된 variadic 인수 2이(가) 서식 문자열 '%s'에 필요합니다.
+  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(18,10):
+  이 인수는 버퍼 크기로 사용됩니다.
+  
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(19,9): error C2106: '=': 왼쪽 피연산자는 l-value이어야 합니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(48,3): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.

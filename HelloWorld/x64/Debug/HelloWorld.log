@@ -1,3 +1,8 @@
-﻿  lecture24.c
-C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture24.c(141,30): warning C4133: '함수': 'Player *'과(와) 'Player2 *' 사이의 형식이 호환되지 않습니다.
+﻿  lecture25.c
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture25.c(17,9): warning C4068: 알 수 없는 pragma 'pop'
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture25.c(123,12): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'Point'입니다.
+C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture25.c(147,12): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\lecture25.c(147,12):
+  서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
   HelloWorld.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\HelloWorld.exe

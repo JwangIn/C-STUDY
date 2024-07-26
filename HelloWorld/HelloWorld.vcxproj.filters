@@ -96,6 +96,9 @@
     <ClCompile Include="lecture24.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="lecture25.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lectures.h">
