@@ -1,5 +1,2 @@
-﻿  Console.c
-  Main.c
-C:\Users\Administrator\Desktop\C-STUDY\Avoid_S\Main.c(62,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
+﻿  LINK : C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\Avoid_S.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   Avoid_S.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\Avoid_S.exe
