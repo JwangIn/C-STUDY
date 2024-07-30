@@ -1,18 +1,9 @@
 ﻿  main.c
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\function.h(62,14): warning C4047: '함수': 'char *'의 간접 참조 수준이 'char (*)[30]'과(와) 다릅니다.
-  (소스 파일 'main.c'을(를) 컴파일하는 중)
-  
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\function.h(62,14): warning C4024: 'Compare': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-  (소스 파일 'main.c'을(를) 컴파일하는 중)
-  
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(52,19): warning C4047: '함수': 'Monster (*)[100]'의 간접 참조 수준이 'Monster [100]'과(와) 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(52,19): warning C4024: 'AddMonsterInfo': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(57,20): warning C4047: '함수': 'Monster (*)[100]'의 간접 참조 수준이 'Monster [100]'과(와) 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(57,20): warning C4024: 'ShowMonsterInfo': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(57,34): warning C4047: '함수': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(57,34): warning C4024: 'ShowMonsterInfo': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(25,7): warning C4101: 'monster_name' :참조되지 않은 지역 변수입니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(28,6): warning C4101: 'monster_level' :참조되지 않은 지역 변수입니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(27,7): warning C4101: 'monster_grand' :참조되지 않은 지역 변수입니다.
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(26,7): warning C4101: 'monster_region' :참조되지 않은 지역 변수입니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\function.h(61,32): warning C4047: '함수': 'char *'의 간접 참조 수준이 'char (*)[30]'과(와) 다릅니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\function.h(61,32): warning C4024: 'Compare': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(74,4): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(28,7): warning C4101: 'monster_name' :참조되지 않은 지역 변수입니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(31,6): warning C4101: 'monster_level' :참조되지 않은 지역 변수입니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(30,7): warning C4101: 'monster_grand' :참조되지 않은 지역 변수입니다.
+C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(29,7): warning C4101: 'monster_region' :참조되지 않은 지역 변수입니다.
   MonsterDataManger.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\MonsterDataManger.exe

@@ -16,7 +16,10 @@
 // 3. 배열에다가 구조체 배열 데이터를 넣어야한다
 // 4. char name[100][30] = Monster.name
 
+void ShowMenu()
+{
 
+}
 
 int main()
 {
@@ -39,11 +42,12 @@ int main()
 		// 4. 몬스터 데이터 삭제
 		// 5. 프로그램 종료
 		//system("cls");
-		printf("1. 몬스터 데이터 추가");
-		printf("2. 몬스터 데이터 보기");
-		printf("3. 몬스터 데이터 찾기");
-		printf("4. 몬스터 데이터 삭제");
-		printf("5. 프로그램 종료");
+		printf("1. 몬스터 데이터 추가\n");
+		printf("2. 몬스터 데이터 보기\n");
+		printf("3. 몬스터 데이터 찾기\n");
+		printf("4. 몬스터 데이터 삭제\n");
+		printf("5. 프로그램 창 정리\n");
+		printf("6. 프로그램 종료\n");
 
 		scanf_s("%d", &playerInput);
 
@@ -54,17 +58,23 @@ int main()
 
 		if (playerInput == 2)
 		{
-			ShowMonsterInfo(monsterGroup, &totalMonsterCount);
+			ShowMonsterInfo(monsterGroup, totalMonsterCount);
 		}
 
 		if (playerInput == 3)
 		{
-
+			SerchMonsterByName(monsterGroup,totalMonsterCount);
+		}
+		if (playerInput == 4)
+		{
+			DeleteMonsterByNumber(monsterGroup);
+		}
+		if (playerInput == 5)
+		{
+			system("cls");
 		}
 
-		printf("%d", totalMonsterCount);
-
-		if (playerInput == 5) {
+		if (playerInput == 6) {
 			break;
 		}
 	}

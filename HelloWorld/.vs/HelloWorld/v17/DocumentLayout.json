@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0865E6E4-D26F-4DC1-9740-757E821AD061}|..\\MonsterDataManger\\MonsterDataManger.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0865E6E4-D26F-4DC1-9740-757E821AD061}|..\\MonsterDataManger\\MonsterDataManger.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0865E6E4-D26F-4DC1-9740-757E821AD061}|..\\MonsterDataManger\\MonsterDataManger.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\\uAD6C\uC870\uCCB4 \uC608\uC81C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0865E6E4-D26F-4DC1-9740-757E821AD061}|..\\MonsterDataManger\\MonsterDataManger.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15C5D1BE-8FB4-4DEB-A8B5-0C98CE1B4D31}|..\\ConsolAdventure\\ConsolAdventure.vcxproj|C:\\Users\\Administrator\\Desktop\\C-STUDY\\ConsolAdventure\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -40,7 +52,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,6 +85,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "\uAD6C\uC870\uCCB4 \uC608\uC81C.c",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\\uAD6C\uC870\uCCB4 \uC608\uC81C.c",
+              "RelativeDocumentMoniker": "..\\MonsterDataManger\\\uAD6C\uC870\uCCB4 \uC608\uC81C.c",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\\uAD6C\uC870\uCCB4 \uC608\uC81C.c",
+              "RelativeToolTip": "..\\MonsterDataManger\\\uAD6C\uC870\uCCB4 \uC608\uC81C.c",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-30T07:23:10.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "function.c",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.c",
+              "RelativeDocumentMoniker": "..\\MonsterDataManger\\function.c",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.c",
+              "RelativeToolTip": "..\\MonsterDataManger\\function.c",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEkAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-30T07:14:47.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "function.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.h",
+              "RelativeDocumentMoniker": "..\\MonsterDataManger\\function.h",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\function.h",
+              "RelativeToolTip": "..\\MonsterDataManger\\function.h",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-30T07:06:48.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\main.c",
+              "RelativeDocumentMoniker": "..\\MonsterDataManger\\main.c",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\MonsterDataManger\\main.c",
+              "RelativeToolTip": "..\\MonsterDataManger\\main.c",
+              "ViewState": "AQIAAAoAAAAAAAAAAIAwwBMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-30T07:07:07.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "lecture19.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\lecture19.c",
               "RelativeDocumentMoniker": "lecture19.c",
@@ -80,12 +144,11 @@
               "RelativeToolTip": "lecture19.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-22T08:18:44.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T08:18:44.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "lecture23.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\lecture23.c",
               "RelativeDocumentMoniker": "lecture23.c",
@@ -93,12 +156,11 @@
               "RelativeToolTip": "lecture23.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAIgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-22T07:05:19.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T07:05:19.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "HELLO.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\Hello.c",
               "RelativeDocumentMoniker": "Hello.c",
@@ -106,12 +168,11 @@
               "RelativeToolTip": "Hello.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-19T08:53:47.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T08:53:47.285Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "lecture21.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\lecture21.c",
               "RelativeDocumentMoniker": "lecture21.c",
@@ -119,12 +180,11 @@
               "RelativeToolTip": "lecture21.c",
               "ViewState": "AQIAAAsAAAAAAAAAAIAwwCUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-19T08:52:35.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T08:52:35.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "5\uAC15_\uBA54\uC778.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\5\uAC15_\uBA54\uC778.c",
               "RelativeDocumentMoniker": "5\uAC15_\uBA54\uC778.c",
@@ -132,12 +192,11 @@
               "RelativeToolTip": "5\uAC15_\uBA54\uC778.c",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-19T07:33:11.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T07:33:11.9Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "lectures.h",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\HelloWorld\\lectures.h",
               "RelativeDocumentMoniker": "lectures.h",
@@ -145,25 +204,24 @@
               "RelativeToolTip": "lectures.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-19T07:33:02.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T07:33:02.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\ConsolAdventure\\main.c",
               "RelativeDocumentMoniker": "..\\ConsolAdventure\\main.c",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\ConsolAdventure\\main.c",
               "RelativeToolTip": "..\\ConsolAdventure\\main.c",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGkAAAAMAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAIgAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-07-18T07:05:02.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Main.c",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\C-STUDY\\Avoid_S\\Main.c",
               "RelativeDocumentMoniker": "..\\Avoid_S\\Main.c",
@@ -171,8 +229,7 @@
               "RelativeToolTip": "..\\Avoid_S\\Main.c",
               "ViewState": "AQIAAMUAAAAAAAAAAEBVwMkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-11T07:07:42.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T07:07:42.278Z"
             }
           ]
         }
