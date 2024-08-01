@@ -2,6 +2,8 @@
 #include <string.h>
 #include "function.h"
 
+
+#define filename "monsterData.txt"
 /*
 * typedef struct Monster {
 * 	char name[30];
@@ -16,23 +18,72 @@
 // 3. 배열에다가 구조체 배열 데이터를 넣어야한다
 // 4. char name[100][30] = Monster.name
 
-void ShowMenu()
+void PrintMonsterList(Monster* monsterList, int totalCount)
 {
+	FILE* fp = fopen(filename, "w"); 
 
+	if (fp == NULL) {
+		perror("Write Error! \n");		
+	}
+	
+	 
+	for (int i = 0; i < totalCount; ++i) {
+		fprintf(fp, "%s %s %s\n", monsterList[i].name, monsterList[i].grade, monsterList[i].region);
+	}
+	
+
+	fclose(fp);
+
+}
+
+void LoadMonsterData(Monster* monsterList, int* totalCount)
+{
+	
+
+	FILE* fp = fopen(filename, "r");
+
+	if (fp == NULL) {
+		perror("Load Error! \n");
+	}
+
+	int count = 0;
+	char ch;
+
+	if (fgetc(fp) != EOF)
+	{
+		count = 1;
+	}
+
+	fseek(fp, 0, SEEK_SET); // fp가 가리키는 주소를 파일의 시작으로 이동
+
+	while (fgetc(fp) != EOF)
+	{
+		ch = fgetc(fp);
+		if (ch == '\n') {
+			count++;
+		}
+	}
+
+	fseek(fp, 0, SEEK_SET);
+	*totalCount = count;
+
+	for (int i = 0; i < count; ++i)
+	{
+		fscanf_s(fp, "%s %s %s", (monsterList + i)->name, (monsterList + i)->grade, (monsterList + i)->region);
+	}
+
+
+	fclose(fp);
 }
 
 int main()
 {
 	int playerInput = 0;
 
-	char monster_name[100][30];
-	char monster_region[100][30];
-	char monster_grand[100][30];
-	int monster_level[100][30];
-
-
 	Monster monsterGroup[100]; // 몬스터의 정보를 넣을 수 있는 구조체
 	int totalMonsterCount = 0;   // 몬스터 데이터에 몇번 Index에 저장되었는가
+
+	LoadMonsterData(monsterGroup, &totalMonsterCount);
 
 	while (1)
 	{
@@ -78,6 +129,8 @@ int main()
 			break;
 		}
 	}
+
+	PrintMonsterList(monsterGroup, totalMonsterCount);
 
 
 }

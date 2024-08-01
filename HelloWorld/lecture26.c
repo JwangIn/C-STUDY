@@ -1,6 +1,8 @@
 #include "lectures.h"
+#include "FileFunc.h"
 
-#define filename "Test\\people.txt"
+
+
 
 // 파일이 저장되는 위치.
 // 
@@ -23,99 +25,140 @@
 // 운영체제가 다르고, 종류도 다 다른 이 데이터를 저장하려면 , 파일 스트림을 연결해줘야한다.
 // 구조체 File 
 
-typedef struct People {
-    char name[30];
-    int age;
-}Person;
 
-Person People[3] = {
-        {"이순신", 31},
-        {"강감찬",32},
-        {"장보고",33}
-};
 
-void WriteFile()
+
+// 파일 입출력2
+// 쓰기. "w+" Appendix 쓰기
+// w+ 모드
+// 기능 : 파일을 읽고 쓰기 위한 모드. 파일이 존재하지 않으면 파일을 새로 생성하고, 파일이 존재하면 내용을 모두 지우고 다시 씁니다.
+
+// r+ 모드
+// 기능 : 파일을 읽은 후 쓰기 위한 모드. 파일에 존재하지 않으면 에러가 생긴다.
+
+// a모드(appendix)
+ // 기능 : 파일을 추가 모드로 열기 위한 모드.
+
+// a+모드 
+// 기능 : 파일을 추가 한 후에 읽기 까지 가능한 모드
+
+// fseek 함수 : 파일을 입출력할 때 파일의 크기만큼 file pointer 가리키는 값이 달라지게된다.
+// fp를 이용해서 쓰시와 읽기를 동시에 한다면 처음에 쓰기를 fp 마지막 값을 가리키게 된다
+// 처음부터 읽기 위해서 fp를 다시 시작점으로 돌려야할 필요가 있다
+
+// fseek(fp, 0 , SEEK_SET)
+// SEEK_SET : 파일의 시작점 
+// SEEK_END : 파일의 끝점
+// SEEK_CUR : 파일의 
+
+// 요약 
+// w+ : 쓰기->읽기 가능한 모드, 파일이 존재하면 내용을 모두 지우고 새로 시작
+// r+ : 일기->쓰기 가능한 모드, 파일을 읽은 후에 다시 쓰기가 가능한 모드
+// a : 파일이 가리키는 마지막 위치에서 데이터를 추가하는 모드
+// a+ : 파일을 추가한 후에 읽기 까지 가능한 모드
+
+
+WritePlus()
 {
-    FILE* fp = fopen(filename, "w"); // 앞은 파일의 이름 뒤는 w의 준말 //  a.txt파일과 운영체제를 파일 스트림과 연결
-    //fp = fopen_s(&fp,"a.txt" ,"w"); 
+    FILE* fp = fopen(filename2, "w+");
 
-    // fopen 스트림을 연결해주는 함수가 정상적으로 실행되지 않을 때
-    if (fp == NULL) {
-        printf("Write Error! \n");
-        return 0;
+    if (fp == NULL)
+    {
+        printf("파일 연결 실패!\n");
+
     }
+    // 파일 입력(write)
+    fputs("Hello World!\n", fp);
+    // 파일을 파일의 끝 '\0' End of FILE EOF : 운영체게마다 다름 
 
-    fputs("Hello World!!\n", fp);  // fputs(입력하고싶은값,스트림);
-
-    // FILE* 파일 스트림을 저장하는 구조체, stdout  : 모니터에 연결해주는 스트림
-    fputs("Hello World!!\n", stdout);
-
-
+    fseek(fp, 0, SEEK_SET);
+    // 파일 출력(read)
+    char buffer[100];
+    fgets(buffer, sizeof(buffer), fp);
+    printf("Read from this file : %s", buffer);
     fclose(fp);
 
 }
 
-void ReadFile()
+void Indicator()
 {
-    FILE* fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("\aRead Error\n");
-        return 0;
+    FILE* fp = fopen(filename2, "r");
+    if (fp == NULL)
+    {
+        //ferror(fp);
+        printf("파일 읽기 실패 \n");
     }
+    fgetc(fp); // FILE에서 fp의 주소가 가리키고있는 char를 가져온 후, fp는 다음 주소를 가리킨다.
+    fgetc(fp);
+    fgetc(fp);
+    fgetc(fp);
+    fgetc(fp);
+    fseek(fp, 0, SEEK_CUR);
+    printf("현재 포인터가 가리키고 있는 문자 : %c\n", fgetc(fp));
+    fclose(fp);
 
-    // string, char 
-
-    // fgetc : 한개씩 읽어오는 함수 
-    // fgets : 문자열로 읽어오는 함수 
-
-    char buffer[100]; // 버퍼 : 데이터를 임시적으로 보관했다고 필요할 때 쓰는 용도 
-
-    fgets(buffer, 100, fp);
-    printf("%s\n", buffer);
 }
 
-void WriteFileByStruct()
+void ReadPlus()
 {
-    for (int i = 0; i < 3;++i) {
-        printf("이름 : %s 나이 : %d\n", People[i].name, People[i].age);
+    FILE* fp = fopen(filename2, "r+");
+    if (fp == NULL)
+    {
+        
+        printf("파일 읽기 실패 \n");
     }
+    char buffer[100];
+    fgets(buffer, sizeof(buffer), fp);
+    printf("Read from this file : %s", buffer);
 
-    FILE* fp = fopen(filename, "w");
-
-    if (fp == NULL) {
-        printf("Write Error !! \n");
-        return 0;
-    }
-
-    for (int i = 0; i < 3;++i) {
-        fprintf(fp, "이름 : %s 장군님 나이 : %d \n", People[i].name, People[i].age);
-    }
+    fseek(fp, 0, SEEK_END);
+    fputs("Append text \n", fp);
     fclose(fp);
 }
 
+void AppendixMode()
+{
+    FILE* fp = fopen(filename2, "a");
+    if (fp == NULL)
+    {
+        printf("append Mode Error! \n");
+    }
 
+    fputs("Append More Text \n", fp);
+
+    fclose(fp);
+}
+
+void AppendixPlusMode()
+{
+    FILE* fp = fopen(filename2, "a+");
+    if (fp == NULL)
+    {
+        perror("append plus Error! \n");
+    }
+
+    fputs("Append even More Text \n", fp);
+
+    fseek(fp, 0, SEEK_SET);
+
+    char buffer[100];
+    fgets(buffer, sizeof(buffer), fp);
+    printf("Read from file %s\n", buffer);
+
+    fclose(fp);
+}
 
 void lecture26()
 {
-    //WriteFile(); 파일을 써서 저장하는 함수
+    //WriteFile(); //파일을 써서 저장하는 함수
     //ReadFile();
     //WriteFileByStruct();
-
-    FILE* fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("Read Error !! \n");
-        return 0;
-    }
-    Person People[3];
-
-
-    for (int i = 0;i < 3;++i){
-    fscanf_s(fp, "이름 : %s 장군님 나이 : %d ", People[0].name,30, &People[0].age);
-
-    printf("이름 : %s 장군님 나이 : %d ", People[0].name, People[0].age);
-    }
-
-
+    //ReadFileByStruct();
+    //WritePlus();
+    // Indicator();
+    //ReadPlus();
+    //AppendixMode();
+    //AppendixPlusMode();
 }
 
 // 구조체로 데이터를 저장하는 방법 고민!
