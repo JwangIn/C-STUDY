@@ -105,6 +105,9 @@
     <ClCompile Include="FileFunc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="lecture27.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lectures.h">

@@ -1,15 +1,3 @@
 ﻿  main.c
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16): warning C4477: 'fscanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'char *'입니다.
-  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16):
-  이 인수는 버퍼 크기로 사용됩니다.
-  
-C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16): warning C4473: 'fscanf_s': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
-  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16):
-  자리 표시자 및 해당 매개 변수에는 variadic 인수가 6개 필요하지만 3개가 제공되었습니다.
-  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16):
-  누락된 variadic 인수 4이(가) 서식 문자열 '%s'에 필요합니다.
-  C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(72,16):
-  이 인수는 버퍼 크기로 사용됩니다.
-  
 C:\Users\Administrator\Desktop\C-STUDY\MonsterDataManger\main.c(125,4): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   MonsterDataManger.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\MonsterDataManger.exe

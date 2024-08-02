@@ -24,3 +24,4 @@ void lecture23();
 void lecture24();
 void lecture25();
 void lecture26();
+void lecture27();
