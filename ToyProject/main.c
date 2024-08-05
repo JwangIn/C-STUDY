@@ -4,19 +4,15 @@
 #include <stdlib.h>
 
 
-#define ROWS 30 // 가로 
+#define ROWS 50 // 가로 
 #define COLS 30 // 세로 
 
 
-char map[ROWS][COLS] = { 0 };
+int map[COLS][ROWS] = { 0 };
 char mapString[(COLS * (ROWS + 1)) + 1];
 
-typedef struct {
-    int x;
-    int y;
-} Position;
 
-void LoadData()
+void ShowGameRecord()
 {
 
 }
@@ -28,25 +24,25 @@ void StartMenu(int y)
 	while (true)
 	{
 		Clear();
+		GotoXY(11, 5);
+		printf("방향키와 Ctrl을 눌러 조작합니다.");
 		GotoXY(18, 13);
 		printf("1 . 게 임 시 작");
 		GotoXY(18, 18);
-		printf("2. 기 록 확 인");
+		printf("2 . 기 록 확 인");
 		GotoXY(18, 23);
-		printf("3. 종 료 ");
+		printf("3 . 종 료 ");
 
 		
 		if (GetAsyncKeyState(VK_DOWN) & 8001)
 		{
-
-			if(y > 18)y = 18;
 			y += 5;
-
+			if(y > 23)y = 23;
 		}
 		else if (GetAsyncKeyState(VK_UP) & 8001)
 		{
-			if (y < 18)y = 18;
 			y -= 5;
+			if (y < 13)y = 13;
 		}
 	
 		GotoXY(13, y);
@@ -57,7 +53,7 @@ void StartMenu(int y)
 		
 		else if (y == 18 && GetAsyncKeyState(VK_CONTROL) & 8001)
 		{
-			//LoadData;
+			//ShowGameRecord();
 		}
 		else if (y == 23 && GetAsyncKeyState(VK_CONTROL) & 8001)
 			exit(0);
@@ -68,31 +64,30 @@ void StartMenu(int y)
 	
 }
 
-void MakeMap(char Wall, char(*map)[ROWS]) // map -> 30 * 30
+void MakeMap(int(*map)[ROWS]) // map -> 30 * 30
 {
 	for (int i = 0; i < COLS; ++i)
 	{
 		for (int j = 0; j < ROWS; ++j)
 		{
-			map[i][j] = ' ';
+			map[i][j] = 0;
 		}
 	}
 	for (int i = 0; i < COLS; ++i) // ' ' => 32 '#' => 35
 	{
-		map[i][0] = Wall;
-		map[i][ROWS - 1] = Wall;
+		map[i][0] = 1;
+		map[i][ROWS - 1] = 1;
 
 	}
 	for (int j = 0; j < ROWS; ++j)
 	{
-		map[0][j] = Wall;
-		map[COLS - 1][j] = Wall;
+		map[0][j] = 1;
+		map[COLS - 1][j] = 1;
 	}
 
 }
 
-
-void RenderMap()  // 만들어진 맵을 그리는 함수
+void RenderMap(char Wall)  // 만들어진 맵을 그리는 함수
 {
 	int mapIndex = 0;
 
@@ -100,8 +95,12 @@ void RenderMap()  // 만들어진 맵을 그리는 함수
 	{
 		for (int j = 0; j < ROWS; ++j)
 		{
-			mapString[mapIndex] = map[i][j];
-			mapIndex++;                           // ++ 후위 연산자라 계산이 끝나면 +함
+			if(map[i][j]==0)
+				mapString[mapIndex] = ' ';
+			else if (map[i][j] == 1)
+				mapString[mapIndex] = Wall;
+
+			mapIndex++;                         // ++ 후위 연산자라 계산이 끝나면 +함
 		}
 		mapString[mapIndex++] = '\n';
 	}
@@ -117,7 +116,7 @@ void GoToTargetPos(int a, int b, char* s)
 
 
 
-void Monster1(int*x,int* y) // 벽 따라다니면서 플레이어한테 총알
+void Monster1(int*x,int* y, int(*map)[ROWS]) // 벽 따라다니면서 플레이어한테 총알
 {
 	GoToTargetPos(*x, *y, "o");
 
@@ -130,26 +129,16 @@ void Monster1(int*x,int* y) // 벽 따라다니면서 플레이어한테 총알
 	int new_y = *y + dy[i];
 
 	if (map[COLS][ROWS] != 0)
+	{
 		i++;
+
+	}
+		
 
 	*x = new_x;
 	*y = new_y;
 }
 
-void Monster2()	// 벽만들고 못 나가게 만들기
-{
-
-}
-
-void Monster3() // 플레이어한테 돌진 
-{
-	
-}
-
-void Boss()
-{
-
-}
 
 
 void InputProcess(int* X, int* Y) // x 1 ~ 48 y 1 ~ 29
@@ -188,17 +177,20 @@ int main()
 
 	StartMenu(StartY); 
 
-	MakeMap('#', map);
-	RenderMap();
+	MakeMap(map);
+	
+	RenderMap('#');
 	int mx = 3, my = 4;
+
 	while (1)
 	{
 		Clear;
+
 		GoToTargetPos(0, 0, mapString);
 
 		GoToTargetPos(playerX, playerY, "@");
 		
-		if (map[ROWS][COLS] == 0)
+		if (map[COLS][ROWS] == 0)
 		{
 			InputProcess(&playerX, &playerY);
 		}
@@ -214,7 +206,7 @@ int main()
 
 		
 		
-		Monster1(&mx, &my);
+		//Monster1(&mx, &my);
 
 
 

@@ -60,13 +60,13 @@ void MakeMap(char Wall, char(*map)[ROWS]) // map -> 30 * 30
 			map[i][j] = ' ';
 		}
 	}
-	for (int i = 0; i < COLS; ++i) // ' ' => 32 '#' => 35
+	for (int i = 0; i < ROWS; ++i) // ' ' => 32 '#' => 35
 	{
 		map[i][0] = Wall;
 		map[i][ROWS - 1] = Wall;
 
 	}
-	for (int j = 0; j < ROWS; ++j)
+	for (int j = 0; j < COLS; ++j)
 	{
 		map[0][j] = Wall;
 		map[COLS - 1][j] = Wall;
@@ -90,6 +90,7 @@ void RenderMap()  // 만들어진 맵을 그리는 함수
 	mapString[mapIndex] = '\0';
 }
 
+
 void GameInfo() // 게임의 정보를 출력하는 함수를 담당.
 {
 
@@ -97,9 +98,10 @@ void GameInfo() // 게임의 정보를 출력하는 함수를 담당.
 }
 
 
-
 int main()
 {	
+	//SelectStartMenu();
+
 	SetConsoleSize(50, 50);
 	SetConsoleCursorVisibility(0);
 
