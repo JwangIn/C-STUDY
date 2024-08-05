@@ -3,13 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A7ED8F9-6F48-4658-8D09-B4E51A6EB387}|..\\ToyProject\\ToyProject.vcxproj|C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\\uD655\uC778.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A7ED8F9-6F48-4658-8D09-B4E51A6EB387}|..\\ToyProject\\ToyProject.vcxproj|C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15C5D1BE-8FB4-4DEB-A8B5-0C98CE1B4D31}|..\\ConsolAdventure\\ConsolAdventure.vcxproj|C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ConsolAdventure\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CE81096-CC08-40B7-8E61-381C8A460055}|..\\Avoid_S\\Avoid_S.vcxproj|C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\Avoid_S\\Main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4A7ED8F9-6F48-4658-8D09-B4E51A6EB387}|..\\ToyProject\\ToyProject.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.22621.0\\UCRT\\STDIO.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2CEE201-7320-460C-9E13-BAB44803A0F3}|HelloWorld.vcxproj|C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\lecture26.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,50 +45,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.c",
-              "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ConsolAdventure\\main.c",
-              "RelativeDocumentMoniker": "..\\ConsolAdventure\\main.c",
-              "ToolTip": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ConsolAdventure\\main.c",
-              "RelativeToolTip": "..\\ConsolAdventure\\main.c",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAAAJcAAAAiAAAA",
+              "DocumentIndex": 0,
+              "Title": "\uD655\uC778.c",
+              "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\\uD655\uC778.c",
+              "RelativeDocumentMoniker": "..\\ToyProject\\\uD655\uC778.c",
+              "ToolTip": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\\uD655\uC778.c",
+              "RelativeToolTip": "..\\ToyProject\\\uD655\uC778.c",
+              "ViewState": "AQIAABgAAAAAAAAAAAAgwCcAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-08-04T15:58:16.475Z",
+              "WhenOpened": "2024-08-05T06:19:07.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Main.c",
-              "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\Avoid_S\\Main.c",
-              "RelativeDocumentMoniker": "..\\Avoid_S\\Main.c",
-              "ToolTip": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\Avoid_S\\Main.c",
-              "RelativeToolTip": "..\\Avoid_S\\Main.c",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAAAHcAAAAPAAAA",
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ConsolAdventure\\main.c",
+              "RelativeDocumentMoniker": "..\\ConsolAdventure\\main.c",
+              "ToolTip": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ConsolAdventure\\main.c",
+              "RelativeToolTip": "..\\ConsolAdventure\\main.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxUAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-08-04T15:25:53.997Z",
+              "WhenOpened": "2024-08-05T06:07:34.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "stdio.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt\\stdio.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt\\stdio.h",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt\\stdio.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt\\stdio.h",
+              "ViewState": "AQIAAHECAAAAAAAAAAAlwIUCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-05T05:25:52.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\main.c",
               "RelativeDocumentMoniker": "..\\ToyProject\\main.c",
               "ToolTip": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\ToyProject\\main.c",
               "RelativeToolTip": "..\\ToyProject\\main.c",
-              "ViewState": "AQIAALYAAAAAAAAAAAAgwMsAAAAPAAAA",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAAALMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-08-04T15:23:53.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "lecture25.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\lecture25.c",
               "RelativeDocumentMoniker": "lecture25.c",
@@ -97,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "lecture26.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\lecture26.c",
               "RelativeDocumentMoniker": "lecture26.c",
@@ -105,12 +121,11 @@
               "RelativeToolTip": "lecture26.c",
               "ViewState": "AQIAAEsAAAAAAAAAAAAAAGoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-31T15:48:08.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-31T15:48:08.589Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\MonsterDataManger\\main.c",
               "RelativeDocumentMoniker": "..\\MonsterDataManger\\main.c",
@@ -122,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HELLO.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\Hello.c",
               "RelativeDocumentMoniker": "Hello.c",
@@ -134,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "5\uAC15_\uBA54\uC778.c",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\5\uAC15_\uBA54\uC778.c",
               "RelativeDocumentMoniker": "5\uAC15_\uBA54\uC778.c",
@@ -146,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "lectures.h",
               "DocumentMoniker": "C:\\Users\\trund\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\C-STUDY\\HelloWorld\\lectures.h",
               "RelativeDocumentMoniker": "lectures.h",

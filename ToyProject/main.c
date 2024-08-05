@@ -7,34 +7,20 @@
 #define ROWS 30 // 가로 
 #define COLS 30 // 세로 
 
+
 char map[ROWS][COLS] = { 0 };
 char mapString[(COLS * (ROWS + 1)) + 1];
+
+typedef struct {
+    int x;
+    int y;
+} Position;
 
 void LoadData()
 {
 
 }
 
-void Up(int* Y)
-{
-	if (*Y < 2)*Y = 2;
-	(*Y)--;
-}
-void Down(int* Y)
-{
-	if (*Y > 27) *Y = 27;
-	(*Y)++;
-}
-void Right(int* X)
-{
-	if (*X > 27) *X = 27;
-	*X = *X + 1;
-}
-void Left(int* X)
-{
-	if (*X < 2) *X = 2;
-	*X = *X - 1;
-}
 
 void StartMenu(int y)
 {
@@ -105,6 +91,7 @@ void MakeMap(char Wall, char(*map)[ROWS]) // map -> 30 * 30
 
 }
 
+
 void RenderMap()  // 만들어진 맵을 그리는 함수
 {
 	int mapIndex = 0;
@@ -121,15 +108,32 @@ void RenderMap()  // 만들어진 맵을 그리는 함수
 	mapString[mapIndex] = '\0';
 }
 
+
 void GoToTargetPos(int a, int b, char* s)
 {
 	GotoXY(a, b);
 	printf("%s", s);
 }
 
-void Monster1(int* x,int* y) // 벽 따라다니면서 플레이어한테 총알
+
+
+void Monster1(int*x,int* y) // 벽 따라다니면서 플레이어한테 총알
 {
+	GoToTargetPos(*x, *y, "o");
+
+	int dx[4] = { 0, 1, 0, -1 }; // 위 오른쪽 아래 왼쪽
+	int dy[4] = { -1, 0, 1, 0 };
+
+	int i = 0;
 	
+	int new_x = *x + dx[i];
+	int new_y = *y + dy[i];
+
+	if (map[COLS][ROWS] != 0)
+		i++;
+
+	*x = new_x;
+	*y = new_y;
 }
 
 void Monster2()	// 벽만들고 못 나가게 만들기
@@ -157,7 +161,7 @@ void InputProcess(int* X, int* Y) // x 1 ~ 48 y 1 ~ 29
 	}
 	else if (GetAsyncKeyState(VK_RIGHT) & 8001)
 	{
-		if (*X > 27) *X = 27;
+		if (*X > 50) *X = 50;
 		*X = *X + 1;
 	}
 	else if (GetAsyncKeyState(VK_DOWN) & 8001)
@@ -186,15 +190,18 @@ int main()
 
 	MakeMap('#', map);
 	RenderMap();
-
+	int mx = 3, my = 4;
 	while (1)
 	{
 		Clear;
 		GoToTargetPos(0, 0, mapString);
 
 		GoToTargetPos(playerX, playerY, "@");
-
-		InputProcess(&playerX, &playerY);
+		
+		if (map[ROWS][COLS] == 0)
+		{
+			InputProcess(&playerX, &playerY);
+		}
 
 		/*
 		*  1. 몬스터 소환 (가능하면 랜덤으로)
@@ -205,6 +212,9 @@ int main()
 		*  6. 스테이지 증가한거 표시 및 저장 로드가능 하게
 		*/
 
+		
+		
+		Monster1(&mx, &my);
 
 
 
@@ -214,12 +224,7 @@ int main()
 
 
 
-
-
-
-
-
-		Sleep(50);
+		Sleep(100);
 	}
 
 
