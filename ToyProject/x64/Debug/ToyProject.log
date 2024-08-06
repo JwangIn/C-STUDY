@@ -1,3 +1,20 @@
 ﻿  main.c
-C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(187,3): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
-  ToyProject.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\ToyProject01.exe
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(141,1): error C2365: 'Up': 재정의: 이전 정의는 '열거자'입니다.
+  C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(23,2):
+  'Up' 선언을 참조하십시오.
+  
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(142,1): error C2365: 'Right': 재정의: 이전 정의는 '열거자'입니다.
+  C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(23,6):
+  'Right' 선언을 참조하십시오.
+  
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(143,1): error C2365: 'Down': 재정의: 이전 정의는 '열거자'입니다.
+  C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(23,13):
+  'Down' 선언을 참조하십시오.
+  
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(144,1): error C2365: 'Left': 재정의: 이전 정의는 '열거자'입니다.
+  C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(23,19):
+  'Left' 선언을 참조하십시오.
+  
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(230,3): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(251,12): warning C4133: '함수': 'int *'과(와) 'Monster *' 사이의 형식이 호환되지 않습니다.
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(251,17): warning C4020: 'Monster1': 실제 매개 변수가 너무 많습니다.

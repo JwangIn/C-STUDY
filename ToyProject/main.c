@@ -11,6 +11,29 @@
 int map[COLS][ROWS] = { 0 };
 char mapString[(COLS * (ROWS + 1)) + 1];
 
+typedef struct Postion
+{
+	int x;
+	int y;
+}Postion;
+
+
+typedef enum monsterDir
+{
+	Up, Right, Down, Left
+}monsterDir;
+
+typedef struct Monster {
+	int x;
+	int y;
+	monsterDir direction;
+}Monster;
+
+typedef struct MonsterBullet
+{
+	int x;
+	int y;
+}MonsterBullet;
 
 void ShowGameRecord()
 {
@@ -116,52 +139,77 @@ void GoToTargetPos(int a, int b, char* s)
 
 
 
-void Monster1(int*x,int* y, int(*map)[ROWS]) // 벽 따라다니면서 플레이어한테 총알
+
+void Monster1(Monster* monster) // 벽 따라다니면서 플레이어한테 총알
 {
-	GoToTargetPos(*x, *y, "o");
+	GoToTargetPos(monster->x, monster->y, "o");
 
 	int dx[4] = { 0, 1, 0, -1 }; // 위 오른쪽 아래 왼쪽
 	int dy[4] = { -1, 0, 1, 0 };
 
-	int i = 0;
-	
-	int new_x = *x + dx[i];
-	int new_y = *y + dy[i];
+	if (map[*y+dy[monster->direction]][*x + dx[monsteri]] == 1)
+		monsteri++;
 
-	if (map[COLS][ROWS] != 0)
+	if (monsteri > 3)
+		monsteri = 0;
+
+	int newX = *x + dx[monsteri];
+	int newY = *y + dy[monsteri];
+
+	*x = newX;
+	*y = newY;
+
+}
+
+void monsterfire(Monster* monster,MonsterBullet* monsterbullet)
+{
+	if (Up)
 	{
-		i++;
-
+		GoToTargetPos((monster->x) ++, monster->y  , "*");
 	}
-		
+	else if (Right)
+	{
+		GoToTargetPos(monster->x, (monster->y)++, "*");
+	}
+	else if (Down)
+	{
+		GoToTargetPos((monster->x)--, monster->y, "*");
+	}
+	else if (Left)
+	{
+		GoToTargetPos(monster->x, (monster->y)--, "*");
+	}
 
-	*x = new_x;
-	*y = new_y;
 }
 
 
-
-void InputProcess(int* X, int* Y) // x 1 ~ 48 y 1 ~ 29
+void InputProcess(Postion* player) // x 1 ~ 48 y 1 ~ 29
 {
 	if (GetAsyncKeyState(VK_LEFT) & 8001) // 왼쪽키를 눌렀을 때
 	{
-		if (*X < 2) *X = 2;
-		*X = *X - 1;
+		if (player->x < 0) player->x = 0;
+		// x가 왼쪽으로 갔을때 map의 값이 0이면 움직여라 
+		// map[][]는 0,1밖에 없음
+		if( map[player->y][player->x - 1]==0)
+		player->x = player->x - 1;
 	}
 	else if (GetAsyncKeyState(VK_RIGHT) & 8001)
 	{
-		if (*X > 50) *X = 50;
-		*X = *X + 1;
+		if (player->x > 49) player->x = 49;
+		if ( map[player->y][player->x + 1] == 0)
+		player->x = player->x + 1;
 	}
 	else if (GetAsyncKeyState(VK_DOWN) & 8001)
 	{
-		if (*Y > 27) *Y = 27;
-		(*Y)++;
+		if (player->y > 29) player->y = 29;
+		if (map[player->y + 1][player->x] == 0)
+		(player->y)++;
 	}
 	else if (GetAsyncKeyState(VK_UP) & 8001)
 	{
-		if (*Y < 2)*Y = 2;
-		(*Y)--;
+		if (player->y < 0)player->y = 0;
+		if (map[player->y +1][player->x] == 0)
+		(player->y)--;
 	}
 
 }
@@ -171,7 +219,7 @@ int main()
 	SetConsoleSize(50, 50);
 	SetConsoleCursorVisibility(0);
 
-	int playerX = 15, playerY = 15;
+	Postion player={15,15};
 
 	int StartX = 15, StartY = 18;
 
@@ -188,12 +236,11 @@ int main()
 
 		GoToTargetPos(0, 0, mapString);
 
-		GoToTargetPos(playerX, playerY, "@");
+		GoToTargetPos(player.x, player.y, "@");
 		
-		if (map[COLS][ROWS] == 0)
-		{
-			InputProcess(&playerX, &playerY);
-		}
+		
+		InputProcess(&player);
+		
 
 		/*
 		*  1. 몬스터 소환 (가능하면 랜덤으로)
@@ -203,10 +250,10 @@ int main()
 		*  5. 1~4를 반복
 		*  6. 스테이지 증가한거 표시 및 저장 로드가능 하게
 		*/
-
+		Monster m1 = {4,4,0};
 		
 		
-		//Monster1(&mx, &my);
+		Monster1(m1);
 
 
 
