@@ -1,3 +1,6 @@
 ﻿  main.c
-C:\Users\trund\OneDrive\바탕 화면\C-STUDY\ToyProject\main.c(388,3): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
-  ToyProject.vcxproj -> C:\Users\trund\OneDrive\바탕 화면\C-STUDY\HelloWorld\x64\Debug\ToyProject01.exe
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(486,3): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(510,4): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(472,9): warning C4101: 'monsterbullet' :참조되지 않은 지역 변수입니다.
+C:\Users\Administrator\Desktop\C-STUDY\ToyProject\main.c(471,10): warning C4101: 'monster' :참조되지 않은 지역 변수입니다.
+  ToyProject.vcxproj -> C:\Users\Administrator\Desktop\C-STUDY\HelloWorld\x64\Debug\ToyProject01.exe

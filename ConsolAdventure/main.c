@@ -6,6 +6,45 @@
 #define COLS 30 // 세로 
 #define filename "playerData.txt"
 
+typedef struct PlayerData
+{
+	char name[30];  // 이름을 저장하기 위한 배열
+	int score;      // 정수 형태로 점수를 저장한다.
+}PlayerData;
+
+typedef enum Level
+{
+	Easy,Nomal,Hard
+}Level;
+
+typedef struct GameMode
+{
+	
+	Level level;
+}GameMode;
+
+void CountScoreMethod(int* score,GameMode game)
+{
+	switch (game.level)
+	{
+	case Easy:
+		*score = *score;
+		break;
+	case Nomal:
+		*score = (*score)*2;
+		break;
+	case Hard:
+		*score = (*score) * 3;
+		break;
+	default:
+		break;
+
+	}
+}
+
+
+
+
 char map[ROWS][COLS] = { 0 };  // 맵안에 있는 정보
 // ROWS +1 : 개행문자 \n을 더한것
 // (COLS x ROWS) +1 은 
@@ -98,11 +137,6 @@ void GameInfo() // 게임의 정보를 출력하는 함수를 담당.
 
 }
 
-typedef struct PlayerData 
-{
-	char name[30];  // 이름을 저장하기 위한 배열
-	int score;      // 정수 형태로 점수를 저장한다.
-}PlayerData;
 
 void SavePlayerData(PlayerData* player, int totalCount)
 {

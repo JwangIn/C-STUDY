@@ -2,14 +2,16 @@
 #include "Console.h"
 #include <stdbool.h>
 #include <stdlib.h>
-
+#include <time.h>
 
 #define ROWS 50 // 가로 
 #define COLS 30 // 세로 
-
+#define filename "Record.txt"
 
 int map[COLS][ROWS] = { 0 };
 char mapString[(COLS * (ROWS + 1)) + 1];
+int floor = 0;
+
 
 typedef struct Postion
 {
@@ -18,6 +20,10 @@ typedef struct Postion
 	bool live;
 }Postion;
 
+typedef enum MonsterNum
+{
+	One,Two,Three,Four,Five,Six,Seven,Eight,Nine
+}MonsterNum;
 
 typedef enum Direction
 {
@@ -43,10 +49,68 @@ typedef struct Bullet
 	BulletBe bullet;
 }Bullet;
 
-
-
-void ShowGameRecord()
+typedef struct PlayerData
 {
+	char name[30];  // 이름을 저장하기 위한 배열
+	int score;      // 정수 형태로 점수를 저장한다.
+}PlayerData;
+
+void ShowGameRecord(PlayerData* player, int* totalCount)
+{
+
+	FILE* fp = fopen(filename, "r");
+
+	if (fp == NULL) {
+		perror("Load Error! \n");
+		return;
+	}
+
+	int count = 0;
+	char ch;
+
+	if (fgetc(fp) != EOF)
+	{
+		count = 1;
+	}
+
+	fseek(fp, 0, SEEK_SET); // fp가 가리키는 주소를 파일의 시작으로 이동
+
+	while (fgetc(fp) != EOF)
+	{
+		ch = fgetc(fp);
+		if (ch == '\n') {
+			count++;
+		}
+	}
+
+	fseek(fp, 0, SEEK_SET);
+	*totalCount = count;
+
+	for (int i = 0; i < count; ++i)
+	{
+		fscanf_s(fp, "%s %d", (player + i)->name, 30, &(player + i)->score);
+	}
+
+
+	fclose(fp);
+}
+
+void SaveGameRecord(PlayerData* player, int totalCount)
+{
+	FILE* fp = fopen(filename, "w");
+
+	if (fp == NULL) {
+		perror("Write Error! \n");
+	}
+
+
+	for (int i = 0; i < totalCount; ++i) {
+
+		fprintf(fp, "%s %d \n", player[i].name, player[i].score);
+	}
+
+
+	fclose(fp);
 
 }
 
@@ -152,25 +216,35 @@ void GoToTargetPos(int a, int b, char* s)
 
 void Monster1(Monster* monster) // 벽 따라다니면서 플레이어한테 총알
 {
-	GoToTargetPos(monster->x, monster->y, "o");
+	if (monster->live != true && monster->live != false)
+	{
+		monster->live = true;
+	}
+	if (monster->live == true)
+	{
+		GoToTargetPos(monster->x, monster->y, "o");
 
-	int dx[4] = { 0, 1, 0, -1 }; // 위 오른쪽 아래 왼쪽
-	int dy[4] = { -1, 0, 1, 0 };
+		int dx[4] = { 0, 1, 0, -1 }; // 위 오른쪽 아래 왼쪽
+		int dy[4] = { -1, 0, 1, 0 };
 
-	if (map[monster->y + dy[monster->direction]][monster->x + dx[monster->direction]] == 1)
-		(monster->direction)++;
+		if (map[monster->y + dy[monster->direction]][monster->x + dx[monster->direction]] == 1)
+			(monster->direction)++;
 
-	if ((monster->direction) > 3)
-		monster->direction = 0;
+		if ((monster->direction) > 3)
+			monster->direction = 0;
 
 
-	monster->x = monster->x + dx[monster->direction];
-	monster->y = monster->y + dy[monster->direction];
-
+		monster->x = monster->x + dx[monster->direction];
+		monster->y = monster->y + dy[monster->direction];
+	}
 }
 
 void monsterfire(Monster* monster,Bullet* monsterbullet)
 {
+	if (monsterbullet->bullet != Not && monsterbullet->bullet != Fire)
+	{
+		monsterbullet->bullet = Not;
+	}
 	if (monsterbullet->bullet==Not)
 	{
 		monsterbullet->x = monster->x;
@@ -210,6 +284,7 @@ void monsterfire(Monster* monster,Bullet* monsterbullet)
 		{
 			monsterbullet->bullet = Not;
 		}
+		
 	}
 	
 }
@@ -254,12 +329,16 @@ void playerattack(Postion* player,Bullet* playerbullet)
 			playerbullet->bullet = Fire;
 		}
 	}
+
+
 	if (playerbullet->bullet == Fire)
 	{
+		
 		if (playerbullet->x  > xx && playerbullet->y == yy) // 총알이 플레이어 오른쪽
 		{
 			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
 			(playerbullet->x)++;
+
 		}
 		else if (playerbullet->x <xx && playerbullet->y == yy) // 총알이 플레이어 왼쪽
 		{
@@ -276,11 +355,14 @@ void playerattack(Postion* player,Bullet* playerbullet)
 			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
 			(playerbullet->y)--;
 		}
-
+		
 	}
+	
 
 	if (playerbullet->x < 1 || playerbullet->x>49 || playerbullet->y < 1 || playerbullet->y>28)
 	{
+		playerbullet->x = 0;
+		playerbullet->y = 0;
 		playerbullet->bullet = Not;
 	}
 
@@ -312,13 +394,13 @@ void InputProcess(Postion* player) // x 1 ~ 48 y 1 ~ 29
 	else if (GetAsyncKeyState(VK_UP) & 8001)
 	{
 		if (player->y < 0)player->y = 0;
-		if (map[player->y +1][player->x] == 0)
+		if (map[player->y -1][player->x] == 0)
 		(player->y)--;
 	}
 
 }
 
-void PlayerDead(Bullet* bullet,Postion* player)
+void PlayerDead(Bullet* bullet,Postion* player,Monster* monster)
 {
 	if (bullet->bullet == Fire)
 	{
@@ -326,9 +408,14 @@ void PlayerDead(Bullet* bullet,Postion* player)
 		{
 			player->live = false;
 			GoToTargetPos(15, 18, " 죽었습니다.");
-			exit(1);
 		}
 	}
+	if (monster->x == player->x && monster->y == player->y)
+	{
+		player->live = false;
+		GoToTargetPos(15, 18, " 죽었습니다.");
+	}
+	
 }
 
 void MonsterDead(Bullet* bullet, Monster* monster)
@@ -337,22 +424,29 @@ void MonsterDead(Bullet* bullet, Monster* monster)
 	{
 		if (monster->x == bullet->x && monster->y == bullet->y)
 		{
+			bullet->x = 0;
+			bullet->y = 0;
+			
 			monster->live = false;
 		}
 	}
 }
 
-void MonsterRevive(Monster* monster, int revivecount)
+void MonsterRevive(Monster* monster, int* revivecount)
 {
+	
 	if (monster->live == false)
 	{
-		revivecount++;
+		(*revivecount)--;
 	}
-	if (revivecount++ == 150)
+	if (*revivecount == 0)
 	{
 		monster->live= true;
-		revivecount = 0;
+		floor++;
+		*revivecount = 50;
+		
 	}
+
 }
 
 
@@ -367,10 +461,16 @@ int main()
 	playerbullet.bullet = Not;
 	player.live = true;
 
-	Monster m1 = { 4,4,0 };
+	Monster m1;
 	Bullet MonsterBullet ;
-	MonsterBullet.bullet = Not;
-	m1.live = true;
+	
+	m1.x = 4;
+	m1.y = 4;
+	m1.direction = 0; // 0 ~ 3 랜덤
+
+	Monster monster[10];
+	Bullet monsterbullet[10];
+
 
 	int StartX = 15, StartY = 18;
 
@@ -379,9 +479,7 @@ int main()
 	MakeMap(map);
 	
 	RenderMap('#');
-	int mx = 3, my = 4;
-
-	int revivecount = 0;
+	int revivecount = 50;
 
 	while (1)
 	{
@@ -399,13 +497,25 @@ int main()
 			playerattack(&player, &playerbullet);
 		}
 		
-		if(m1.live==true)
-		{ 
-			Monster1(&m1);
-			monsterfire(&m1, &MonsterBullet);
-		}
+		Monster1(&m1);
+		monsterfire(&m1, &MonsterBullet);
+		
+		MonsterRevive(&m1, &revivecount);
+		MonsterDead(&playerbullet, &m1);
 		
 
+		PlayerDead(&MonsterBullet, &player, &m1);
+		if (player.live == false)
+		{
+			Clear;
+			GoToTargetPos(15, 18, " 죽었습니다.");
+			break;
+		}
+
+		GoToTargetPos(0, 32, "몬스터 부활까지 :");
+		printf("%d", revivecount);
+		GoToTargetPos(0, 33, "현재 층수 : ");
+		printf("%d", floor);
 
 		Sleep(100);
 	}
@@ -423,6 +533,7 @@ int main()
 		*  6. 스테이지 증가한거 표시 및 저장 로드가능 하게
 		*/
 
+	// 몬스터 구조체 배열의 monster.live 모두가 죽었을때 revie가 실행
 
 
 }
