@@ -15,25 +15,35 @@ typedef struct Postion
 {
 	int x;
 	int y;
+	bool live;
 }Postion;
 
 
-typedef enum monsterDir
+typedef enum Direction
 {
 	Up, Right, Down, Left
-}monsterDir;
+}Direction;
+
+typedef enum BulletBe
+{
+	Not,Fire
+}BulletBe;
 
 typedef struct Monster {
 	int x;
 	int y;
-	monsterDir direction;
+	Direction direction;
+	bool live;
 }Monster;
 
-typedef struct MonsterBullet
+typedef struct Bullet
 {
 	int x;
 	int y;
-}MonsterBullet;
+	BulletBe bullet;
+}Bullet;
+
+
 
 void ShowGameRecord()
 {
@@ -147,41 +157,135 @@ void Monster1(Monster* monster) // 벽 따라다니면서 플레이어한테 총알
 	int dx[4] = { 0, 1, 0, -1 }; // 위 오른쪽 아래 왼쪽
 	int dy[4] = { -1, 0, 1, 0 };
 
-	if (map[*y+dy[monster->direction]][*x + dx[monsteri]] == 1)
-		monsteri++;
+	if (map[monster->y + dy[monster->direction]][monster->x + dx[monster->direction]] == 1)
+		(monster->direction)++;
 
-	if (monsteri > 3)
-		monsteri = 0;
+	if ((monster->direction) > 3)
+		monster->direction = 0;
 
-	int newX = *x + dx[monsteri];
-	int newY = *y + dy[monsteri];
 
-	*x = newX;
-	*y = newY;
+	monster->x = monster->x + dx[monster->direction];
+	monster->y = monster->y + dy[monster->direction];
 
 }
 
-void monsterfire(Monster* monster,MonsterBullet* monsterbullet)
+void monsterfire(Monster* monster,Bullet* monsterbullet)
 {
-	if (Up)
+	if (monsterbullet->bullet==Not)
 	{
-		GoToTargetPos((monster->x) ++, monster->y  , "*");
-	}
-	else if (Right)
-	{
-		GoToTargetPos(monster->x, (monster->y)++, "*");
-	}
-	else if (Down)
-	{
-		GoToTargetPos((monster->x)--, monster->y, "*");
-	}
-	else if (Left)
-	{
-		GoToTargetPos(monster->x, (monster->y)--, "*");
-	}
+		monsterbullet->x = monster->x;
+		monsterbullet->y = monster->y;
+		;
+		monsterbullet->bullet = Fire;
 
+	}
+	if (monsterbullet->bullet == Fire)
+	{ 
+		if (monster->direction == Up)
+		{
+			(monsterbullet->x)++;
+			monsterbullet->y;
+			GoToTargetPos(monsterbullet->x, monsterbullet->y, "*");
+		}
+		else if (monster->direction == Right)
+		{
+			monsterbullet->x;
+			(monsterbullet->y)++;
+			GoToTargetPos(monsterbullet->x, monsterbullet->y, "*");
+		}
+		else if (monster->direction == Down)
+		{
+			(monsterbullet->x)--;
+			monsterbullet->y;
+			GoToTargetPos(monsterbullet->x, monsterbullet->y, "*");
+		}
+		else if (monster->direction == Left)
+		{
+			monsterbullet->x;
+			(monsterbullet->y)--;
+			GoToTargetPos(monsterbullet->x, monsterbullet->y, "*");
+		}
+	
+		if (monsterbullet->x < 1 || monsterbullet->x>49||monsterbullet->y<1||monsterbullet->y>28)
+		{
+			monsterbullet->bullet = Not;
+		}
+	}
+	
 }
 
+int xx, yy;
+
+void playerattack(Postion* player,Bullet* playerbullet)
+{
+
+	if(playerbullet->bullet==Not)
+	{
+		if (GetAsyncKeyState(VK_UP)  && GetAsyncKeyState(VK_CONTROL) & 8001 )
+		{
+			playerbullet->x = player->x;
+			playerbullet->y = (player->y) -2;
+			xx = player->x;
+			yy = player->y;
+			playerbullet->bullet = Fire;
+		}
+		else if (GetAsyncKeyState(VK_DOWN) && GetAsyncKeyState(VK_CONTROL) & 8001)
+		{
+			playerbullet->x = player->x;
+			playerbullet->y = (player->y)+2;
+			xx = player->x;
+			yy = player->y;
+			playerbullet->bullet = Fire;
+		}
+		else if (GetAsyncKeyState(VK_RIGHT) && GetAsyncKeyState(VK_CONTROL) & 8001)
+		{
+			playerbullet->x = (player->x)+2;
+			playerbullet->y = player->y;
+			xx = player->x;
+			yy = player->y;
+			playerbullet->bullet = Fire;
+		}
+		else if (GetAsyncKeyState(VK_LEFT) && GetAsyncKeyState(VK_CONTROL) & 8001)
+		{
+			playerbullet->x = (player->x)-2;
+			playerbullet->y = player->y;
+			xx = player->x;
+			yy = player->y;
+			playerbullet->bullet = Fire;
+		}
+	}
+	if (playerbullet->bullet == Fire)
+	{
+		if (playerbullet->x  > xx && playerbullet->y == yy) // 총알이 플레이어 오른쪽
+		{
+			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
+			(playerbullet->x)++;
+		}
+		else if (playerbullet->x <xx && playerbullet->y == yy) // 총알이 플레이어 왼쪽
+		{
+			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
+			(playerbullet->x)--;
+		}
+		else if (playerbullet->y > yy && playerbullet->x == xx) // 총알이 플레이어보다 아래에 있다
+		{
+			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
+			(playerbullet->y)++;
+		}
+		else if (playerbullet->y < yy && playerbullet->x == xx) // 총알이 플레이어보다 작다. 총알이 플레이어보다 위에있다
+		{
+			GoToTargetPos(playerbullet->x, playerbullet->y, "x");
+			(playerbullet->y)--;
+		}
+
+	}
+
+	if (playerbullet->x < 1 || playerbullet->x>49 || playerbullet->y < 1 || playerbullet->y>28)
+	{
+		playerbullet->bullet = Not;
+	}
+
+
+}
 
 void InputProcess(Postion* player) // x 1 ~ 48 y 1 ~ 29
 {
@@ -214,12 +318,59 @@ void InputProcess(Postion* player) // x 1 ~ 48 y 1 ~ 29
 
 }
 
+void PlayerDead(Bullet* bullet,Postion* player)
+{
+	if (bullet->bullet == Fire)
+	{
+		if (player->x == bullet->x && player->y==bullet->y)
+		{
+			player->live = false;
+			GoToTargetPos(15, 18, " 죽었습니다.");
+			exit(1);
+		}
+	}
+}
+
+void MonsterDead(Bullet* bullet, Monster* monster)
+{
+	if (bullet->bullet == Fire)
+	{
+		if (monster->x == bullet->x && monster->y == bullet->y)
+		{
+			monster->live = false;
+		}
+	}
+}
+
+void MonsterRevive(Monster* monster, int revivecount)
+{
+	if (monster->live == false)
+	{
+		revivecount++;
+	}
+	if (revivecount++ == 150)
+	{
+		monster->live= true;
+		revivecount = 0;
+	}
+}
+
+
+
 int main()
 {
 	SetConsoleSize(50, 50);
 	SetConsoleCursorVisibility(0);
 
 	Postion player={15,15};
+	Bullet playerbullet;
+	playerbullet.bullet = Not;
+	player.live = true;
+
+	Monster m1 = { 4,4,0 };
+	Bullet MonsterBullet ;
+	MonsterBullet.bullet = Not;
+	m1.live = true;
 
 	int StartX = 15, StartY = 18;
 
@@ -230,6 +381,8 @@ int main()
 	RenderMap('#');
 	int mx = 3, my = 4;
 
+	int revivecount = 0;
+
 	while (1)
 	{
 		Clear;
@@ -238,35 +391,37 @@ int main()
 
 		GoToTargetPos(player.x, player.y, "@");
 		
+
+
+		if (player.live==true)
+		{
+			InputProcess(&player);
+			playerattack(&player, &playerbullet);
+		}
 		
-		InputProcess(&player);
+		if(m1.live==true)
+		{ 
+			Monster1(&m1);
+			monsterfire(&m1, &MonsterBullet);
+		}
 		
-
-		/*
-		*  1. 몬스터 소환 (가능하면 랜덤으로)
-		*  2. 몬스터 처치 시 상점 등장 (x초후 몬스터 재등장)
-		*  3. x번 반복 후 보스 
-		*  4. 몬스터 등장 수 증가 상점 증가
-		*  5. 1~4를 반복
-		*  6. 스테이지 증가한거 표시 및 저장 로드가능 하게
-		*/
-		Monster m1 = {4,4,0};
-		
-		
-		Monster1(m1);
-
-
-
-
-
-
-
 
 
 		Sleep(100);
 	}
 
 
+
+
+
+	/*
+		*  1. 몬스터 소환 (가능하면 랜덤으로)
+		*  2. 몬스터 처치 시 상점 등장 (x초후 몬스터 재등장)
+		*  3. x번 반복 후 보스
+		*  4. 몬스터 등장 수 증가 상점 증가
+		*  5. 1~4를 반복
+		*  6. 스테이지 증가한거 표시 및 저장 로드가능 하게
+		*/
 
 
 
